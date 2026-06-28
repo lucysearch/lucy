@@ -8551,12 +8551,12 @@ chaz_Strings_probe_c99_snprintf(void) {
 #include <stdlib.h>
 
 static const char chaz_SymbolVisibility_symbol_exporting_code[] =
-    CHAZ_QUOTE(  %s int exported_function() {   )
-    CHAZ_QUOTE(      return 42;                 )
-    CHAZ_QUOTE(  }                              )
-    CHAZ_QUOTE(  int main() {                   )
-    CHAZ_QUOTE(      return 0;                  )
-    CHAZ_QUOTE(  }                              );
+    CHAZ_QUOTE(  %s int exported_function(void) {   )
+    CHAZ_QUOTE(      return 42;                     )
+    CHAZ_QUOTE(  }                                  )
+    CHAZ_QUOTE(  int main(void) {                   )
+    CHAZ_QUOTE(      return 0;                      )
+    CHAZ_QUOTE(  }                                  );
 
 void
 chaz_SymbolVisibility_run(void) {
