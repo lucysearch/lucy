@@ -15,7 +15,7 @@
  */
 
 /*
- * Sample program to get started with the Go bindings for the Apache Lucy C
+ * Sample program to get started with the Go bindings for the Lucy C
  * library.
  *
  * Creates an index with a few documents and conducts a few searches.

@@ -1,10 +1,10 @@
-Build instructions for the Apache Lucy C library
+Build instructions for the Lucy C library
 ================================================
 
 Clownfish dependency
 --------------------
 
-**IMPORTANT:** The Apache Lucy C library depends on the Clownfish object system
+**IMPORTANT:** The Lucy C library depends on the Clownfish object system
 which must be built first. Please read this section, or your build will
 probably **FAIL**.
 

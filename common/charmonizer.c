@@ -9383,9 +9383,9 @@ lucy_MakeFile_write_c_install_rules(lucy_MakeFile *self) {
     free(src);
 
     chaz_MakeFile_install_pkgconfig(self->makefile, "lucy", lucy_version,
-        "Name: Apache Lucy\n"
+        "Name: Lucy\n"
         "Description: Full-text search for dynamic languages\n"
-        "URL: http://lucy.apache.org/\n"
+        "URL: https://github.com/lucysearch/lucy\n"
         "Version: $${version}\n"
         "Requires: clownfish\n"
         "Libs: -L$${libdir} -llucy\n"
