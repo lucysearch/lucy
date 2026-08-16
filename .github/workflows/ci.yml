@@ -1,0 +1,20 @@
+name: CI
+on: [push, pull_request]
+
+jobs:
+  c:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Build and test
+        run: .github/bin/test_c.sh
+  perl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Setup Perl
+        uses: shogo82148/actions-setup-perl@v1
+      - name: Install dependencies
+        run: cpanm -v --notest --no-man-pages Module::Build
+      - name: Build and test
+        run: .github/bin/test_perl.sh
