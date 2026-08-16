@@ -14,12 +14,12 @@
 # limitations under the License.
 
 Gem::Specification.new do |spec|
-  spec.name        = 'apache_lucy'
-  spec.version     = '0.6.2'
+  spec.name        = 'lucy'
+  spec.version     = '0.7.0'
   spec.summary     = "Full text search engine library."
-  spec.author      = "Apache Lucy project"
-  spec.email       = 'dev@lucy.apache.org'
+  spec.author      = "Lucy project"
+  spec.email       = 'lucy@dezi.org'
   spec.files       = ["lib/apache_lucy.rb"]
-  spec.homepage    = 'http://lucy.apache.org'
+  spec.homepage    = 'https://github.com/lucysearch'
 end
 

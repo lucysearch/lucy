@@ -46,7 +46,7 @@ LucyX::Index::LongFieldSim - Similarity optimized for long fields.
 
 =head1 DESCRIPTION
 
-Apache Lucy's default L<Similarity|Lucy::Index::Similarity>
+Lucy's default L<Similarity|Lucy::Index::Similarity>
 implmentation produces a bias towards extremely short fields.
 
     Lucy::Index::Similarity

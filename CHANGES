@@ -1,5 +1,10 @@
 Revision history for Lucy
 
+0.7.0  2026-08-15
+
+  Tasks:
+    * Forked from Apache Lucy project at ASF and renamed to Lucy
+
 0.6.2  2018-02-20
 
   Bugfixes:

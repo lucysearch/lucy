@@ -45,9 +45,8 @@ else {
 my $builder = Lucy::Build->new(
     module_name => 'Lucy',
     license     => 'apache',
-    dist_author =>
-        'The Apache Lucy Project <dev at lucy dot apache dot org>',
-    dist_version       => '0.6.2',
+    dist_author => 'Lucy search project',
+    dist_version       => '0.7.0',
     requires           => {
         'perl'      => '5.8.3',
         'Clownfish' => 0.006002,
@@ -72,9 +71,9 @@ my $builder = Lucy::Build->new(
     meta_merge => { keywords => [qw( search lucy lucene )], },
     meta_add   => {
         resources => {
-            homepage   => 'http://lucy.apache.org',
-            repository => 'https://git-wip-us.apache.org/repos/asf/lucy.git',
-            bugtracker => 'https://issues.apache.org/jira/browse/LUCY',
+            homepage   => 'https://github.com/lucysearch/lucy',
+            repository => 'https://github.com/lucysearch/lucy.git',
+            bugtracker => 'https://github.com/lucysearch/lucy/issues',
         },
     },
     include_dirs => [ $CORE_SOURCE_DIR ],

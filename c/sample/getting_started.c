@@ -15,7 +15,7 @@
  */
 
 /*
- * Sample program to get started with the Apache Lucy C library.
+ * Sample program to get started with the Lucy C library.
  *
  * Creates an index with a few documents and conducts a few searches.
  *
