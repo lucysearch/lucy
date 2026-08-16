@@ -8902,7 +8902,8 @@ S_add_compiler_flags(struct chaz_CLI *cli) {
 
     if (chaz_CC_is_gcc()) {
         chaz_CFlags_append(extra_cflags,
-            "-pedantic -Wall -Wextra -Wno-variadic-macros");
+            "-pedantic -Wall -Wextra -Wno-variadic-macros "
+            "-Wno-cast-function-type -Wno-cast-function-type-mismatch");
         if (chaz_CLI_defined(cli, "enable-perl")) {
             chaz_CFlags_append(extra_cflags, "-DPERL_GCC_PEDANTIC");
         }
