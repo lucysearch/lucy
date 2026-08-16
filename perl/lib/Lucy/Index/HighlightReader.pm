@@ -15,7 +15,7 @@
 
 package Lucy::Index::HighlightReader;
 use Lucy;
-our $VERSION = '0.007000_001';
+our $VERSION = '0.007000_003';
 $VERSION = eval $VERSION;
 
 1;

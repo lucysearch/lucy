@@ -73,3 +73,6 @@ extracted_corpus\b
 
 ^MYMETA.yml$
 ^MYMETA\.json$
+
+# never ship compiled charmonizer
+charmonizer$
