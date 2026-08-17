@@ -18,7 +18,7 @@ use warnings;
 
 package LucyX::Index::LongFieldSim;
 use base qw( Lucy::Index::Similarity );
-our $VERSION = '0.007000_003';
+our $VERSION = '0.007000';
 $VERSION = eval $VERSION;
 
 sub length_norm {

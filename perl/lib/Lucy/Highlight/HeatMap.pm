@@ -15,7 +15,7 @@
 
 package Lucy::Highlight::HeatMap;
 use Lucy;
-our $VERSION = '0.007000_003';
+our $VERSION = '0.007000';
 $VERSION = eval $VERSION;
 
 1;
