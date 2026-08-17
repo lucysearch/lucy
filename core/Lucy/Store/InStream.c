@@ -259,7 +259,11 @@ InStream_Seek_IMP(InStream *self, int64_t target) {
     else if (target >= virtual_window_top
              && target <= virtual_window_end
             ) {
-        ivars->buf = fw_buf - fw_offset + ivars->offset + target;
+        ivars->buf = fw_buf;
+        // fw_buf may be NULL.
+        if (target != virtual_window_top) {
+            ivars->buf += target - virtual_window_top;
+        }
     }
     else if (target > ivars->len) {
         THROW(ERR, "Can't Seek '%o' past EOF (%i64 > %i64)", ivars->filename,
