@@ -276,6 +276,8 @@ test_syntax_errors(TestBatchRunner *runner) {
     S_verify_bad_syntax(runner, "\"\\g\"", "invalid char escape");
     S_verify_bad_syntax(runner, "\"\\uAAAZ\"", "invalid \\u escape");
     S_verify_bad_syntax(runner, "\"\\uAAA\"", "invalid \\u escape");
+    S_verify_bad_syntax(runner, "]\xFF\xBF\xBF\xBF\xBF\xBC\x9F",
+                        "invalid UTF-8 after syntax error");
 }
 
 static void
@@ -341,7 +343,7 @@ test_max_depth(TestBatchRunner *runner) {
 
 void
 TestJson_Run_IMP(TestJson *self, TestBatchRunner *runner) {
-    uint32_t num_tests = 105;
+    uint32_t num_tests = 107;
     if (!getenv("LUCY_VALGRIND")) {
         num_tests += 30; // FIXME: syntax errors leak memory.
     }

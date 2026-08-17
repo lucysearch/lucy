@@ -717,8 +717,12 @@ S_set_error(const char *mess, const char *json, const char *limit, int line,
     else if (len < 0) {
         len = 0; // sanity check
     }
-    String *snippet = SSTR_WRAP_UTF8(json, (size_t)len);
-    S_append_json_string(snippet, buf);
+    if (Str_utf8_valid(json, len)) {
+        String *snippet = SSTR_WRAP_UTF8(json, (size_t)len);
+        S_append_json_string(snippet, buf);
+    } else {
+        CB_Cat_Trusted_Utf8(buf, "invalid UTF-8", 13);
+    }
 
     String *full_mess = CB_Yield_String(buf);
     DECREF(buf);
