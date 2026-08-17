@@ -38,6 +38,8 @@
 #include "Lucy/Search/TermQuery.h"
 #include "Lucy/Search/Query.h"
 
+#define MAX_PARENS 100
+
 #define SHOULD            LUCY_QPARSER_SHOULD
 #define MUST              LUCY_QPARSER_MUST
 #define MUST_NOT          LUCY_QPARSER_MUST_NOT
@@ -229,6 +231,7 @@ S_parse_subqueries(QueryParser *self, Vector *elems) {
     while (1) {
         // Work from the inside out, starting with the leftmost innermost
         // paren group.
+        // FIXME: This has quadratic runtime.
         size_t left = SIZE_MAX;
         size_t right = SIZE_MAX;
         String *field = NULL;
@@ -329,11 +332,17 @@ static void
 S_balance_parens(QueryParser *self, Vector *elems) {
     UNUSED_VAR(self);
     // Count paren balance, eliminate unbalanced right parens.
-    int64_t paren_depth = 0;
-    size_t i = 0;
-    while (i < Vec_Get_Size(elems)) {
+    size_t num_open_parens = 0;
+    size_t paren_depth = 0;
+    size_t j = 0;
+    for (size_t i = 0; i < Vec_Get_Size(elems); i++) {
         ParserElem *elem = (ParserElem*)Vec_Fetch(elems, i);
         if (ParserElem_Get_Type(elem) == TOKEN_OPEN_PAREN) {
+            if (num_open_parens >= MAX_PARENS) {
+                Vec_Store(elems, i, NULL);
+                continue;
+            }
+            num_open_parens++;
             paren_depth++;
         }
         else if (ParserElem_Get_Type(elem) == TOKEN_CLOSE_PAREN) {
@@ -341,12 +350,18 @@ S_balance_parens(QueryParser *self, Vector *elems) {
                 paren_depth--;
             }
             else {
-                Vec_Excise(elems, i, 1);
+                Vec_Store(elems, i, NULL);
                 continue;
             }
         }
-        i++;
+        if (i != j) {
+            Vec_Store(elems, j, INCREF(elem));
+            Vec_Store(elems, i, NULL);
+        }
+        j++;
     }
+
+    Vec_Resize(elems, j);
 
     // Insert implicit parens.
     while (paren_depth--) {

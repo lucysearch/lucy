@@ -22,6 +22,7 @@
 #include <stdlib.h>
 
 #include "Clownfish/Boolean.h"
+#include "Clownfish/CharBuf.h"
 #include "Clownfish/TestHarness/TestBatchRunner.h"
 #include "Lucy/Test.h"
 #include "Lucy/Test/Search/TestQueryParserSyntax.h"
@@ -33,6 +34,7 @@
 #include "Lucy/Document/Doc.h"
 #include "Lucy/Index/Indexer.h"
 #include "Lucy/Plan/FullTextType.h"
+#include "Lucy/Plan/StringType.h"
 #include "Lucy/Plan/Schema.h"
 #include "Lucy/Search/Hits.h"
 #include "Lucy/Search/IndexSearcher.h"
@@ -452,10 +454,49 @@ test_query_parser_syntax(TestBatchRunner *runner) {
     DECREF(index);
 }
 
+static void
+test_query_parser_deeply_nested(TestBatchRunner *runner) {
+    Schema *schema = Schema_new();
+    String *plain_str = Str_newf("plain");
+    StringType *plain = StringType_new();
+    Schema_Spec_Field(schema, plain_str, (FieldType*)plain);
+
+    RAMFolder *folder  = RAMFolder_new(NULL);
+    Indexer   *indexer = Indexer_new(schema, (Obj*)folder, NULL, 0);
+    Indexer_Commit(indexer);
+
+    Folder        *index    = (Folder*)folder;
+    IndexSearcher *searcher = IxSearcher_new((Obj*)index);
+    QueryParser   *qparser  = QParser_new(IxSearcher_Get_Schema(searcher),
+                                          NULL, NULL, NULL);
+    CharBuf *buf = CB_new(0);
+    for (int i = 0; i < 1000000; i++) {
+        CB_Cat_Trusted_Utf8(buf, "(a OR ", 6);
+    }
+    CB_Cat_Trusted_Utf8(buf, "a", 1);
+    for (int i = 0; i < 1000000; i++) {
+        CB_Cat_Trusted_Utf8(buf, ")", 1);
+    }
+    String *query_string = CB_Yield_String(buf);
+    Query *parsed = QParser_Parse(qparser, query_string);
+    TEST_TRUE(runner, parsed != NULL, "deeply nested query");
+
+    DECREF(parsed);
+    DECREF(query_string);
+    DECREF(buf);
+    DECREF(searcher);
+    DECREF(qparser);
+    DECREF(index);
+    DECREF(plain);
+    DECREF(plain_str);
+    DECREF(schema);
+}
+
 void
 TestQPSyntax_Run_IMP(TestQueryParserSyntax *self, TestBatchRunner *runner) {
-    TestBatchRunner_Plan(runner, (TestBatch*)self, 70);
+    TestBatchRunner_Plan(runner, (TestBatch*)self, 71);
     test_query_parser_syntax(runner);
+    test_query_parser_deeply_nested(runner);
 }
 
 
