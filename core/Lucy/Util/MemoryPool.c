@@ -106,17 +106,15 @@ void*
 MemPool_Grab_IMP(MemoryPool *self, size_t amount) {
     MemoryPoolIVARS *const ivars = MemPool_IVARS(self);
     INCREASE_TO_WORD_MULTIPLE(amount);
-    ivars->last_buf = ivars->buf;
 
     // Verify that we have enough stocked up, otherwise get more.
-    ivars->buf += amount;
-    if (ivars->buf >= ivars->limit) {
+    if (ivars->buf == NULL || ivars->buf + amount >= ivars->limit) {
         // Get enough mem from system or die trying.
         S_init_arena(self, ivars, amount);
-        ivars->last_buf = ivars->buf;
-        ivars->buf += amount;
     }
 
+    ivars->last_buf = ivars->buf;
+    ivars->buf += amount;
     // Track bytes we've allocated from this pool.
     ivars->consumed += amount;
 
