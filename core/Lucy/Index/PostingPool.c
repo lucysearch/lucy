@@ -446,7 +446,12 @@ S_write_terms_and_postings(PostingPool *self, PostingWriter *post_writer,
         // DECREF(posting);  // No!!  DON'T destroy!!!
 
         posting = (RawPosting*)PostPool_Fetch(self);
-        post_ivars = RawPost_IVARS(posting);
+        if (posting == NULL) {
+            post_ivars = NULL;
+        }
+        else {
+            post_ivars = RawPost_IVARS(posting);
+        }
     }
 
     // Clean up.
