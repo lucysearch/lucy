@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 git clone --depth=1 https://github.com/lucysearch/lucy-clownfish.git
 
 cd lucy-clownfish/compiler/perl
