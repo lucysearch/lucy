@@ -222,9 +222,7 @@ Not thread-safe.
 
 Some exceptions leak memory.
 
-If you find a bug, please inquire on the Lucy users mailing list about it,
-then report it on the Lucy issue tracker once it has been confirmed:
-L<https://issues.apache.org/jira/browse/LUCY>.
+If you find a bug, please report to L<https://github.com/lucysearch/lucy/issues>.
 
 =head1 COPYRIGHT
 
