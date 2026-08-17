@@ -8683,8 +8683,8 @@ typedef struct SourceFileContext {
     chaz_MakeVar *var;
 } SourceFileContext;
 
-static const char lucy_version[]        = "0.6.2";
-static const char lucy_major_version[]  = "0.6";
+static const char lucy_version[]        = "0.7.0";
+static const char lucy_major_version[]  = "0.7";
 
 static void
 S_add_compiler_flags(struct chaz_CLI *cli);
@@ -8905,7 +8905,7 @@ lucy_MakeFile_new(chaz_CLI *cli) {
         self->cfish_lib_dir = NULL;
     }
     if (chaz_CC_binary_format() == CHAZ_CC_BINFMT_PE) {
-        self->cfish_lib_name = "clownfish-0.6";
+        self->cfish_lib_name = "clownfish-0.7";
     }
     else {
         self->cfish_lib_name = "clownfish";
@@ -9273,29 +9273,6 @@ lucy_MakeFile_write_c_test_rules(lucy_MakeFile *self) {
         chaz_MakeRule_add_rm_command(rule, "lucy.info");
         chaz_MakeRule_add_recursive_rm_command(rule, "coverage");
     }
-}
-
-static void
-lucy_MakeFile_write_c_install_rules(lucy_MakeFile *self) {
-    const char *dir_sep = chaz_OS_dir_sep();
-    char *src;
-
-    src = chaz_Util_join(dir_sep, "autogen", "share", NULL);
-    chaz_MakeFile_install_dir(self->makefile, src, "$(DATADIR)", NULL);
-    free(src);
-
-    src = chaz_Util_join(dir_sep, "autogen", "man", NULL);
-    chaz_MakeFile_install_dir(self->makefile, src, "$(MANDIR)", NULL);
-    free(src);
-
-    chaz_MakeFile_install_pkgconfig(self->makefile, "lucy", lucy_version,
-        "Name: Lucy\n"
-        "Description: Full-text search for dynamic languages\n"
-        "URL: https://github.com/lucysearch/lucy\n"
-        "Version: $${version}\n"
-        "Requires: clownfish\n"
-        "Libs: -L$${libdir} -llucy\n"
-    );
 }
 
 static int

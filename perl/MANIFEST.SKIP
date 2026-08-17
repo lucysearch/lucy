@@ -34,6 +34,9 @@
 038-lock_free_registry\.t
 801-pod_checker\.t
 
+# compiled lemon binary (only lemon.c ships)
+lemon/lemon$
+
 # Makemaker generated files and dirs.
 ^MANIFEST\.
 ^Makefile$
@@ -70,3 +73,6 @@ extracted_corpus\b
 
 ^MYMETA.yml$
 ^MYMETA\.json$
+
+# never ship compiled charmonizer
+charmonizer$
