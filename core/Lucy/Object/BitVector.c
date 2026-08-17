@@ -168,6 +168,9 @@ BitVec_Clear_IMP(BitVector *self, size_t tick) {
 void
 BitVec_Clear_All_IMP(BitVector *self) {
     BitVectorIVARS *const ivars = BitVec_IVARS(self);
+    if (ivars->cap == 0) {
+        return;
+    }
     const size_t byte_size = SI_octet_size(ivars->cap);
     memset(ivars->bits, 0, byte_size);
 }
