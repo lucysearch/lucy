@@ -2,10 +2,8 @@
 
 set -e
 
-INSTALL_DIR="$(pwd)/install"
-export PATH="$INSTALL_DIR/bin:$PATH"
+INSTALL_DIR="$(pwd)/ci_install"
 export CLOWNFISH_INCLUDE="$INSTALL_DIR/share/clownfish/include"
-export LIBRARY_PATH="$INSTALL_DIR/lib"
 export LD_LIBRARY_PATH="$INSTALL_DIR/lib"
 
 export CC=clang
@@ -36,6 +34,7 @@ make install
 
 cd ../../../c
 ./configure \
+    --clownfish-prefix=$INSTALL_DIR \
     -- \
     -D LUCY_UBSAN \
     -fsanitize=address,undefined \
