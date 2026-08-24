@@ -76,3 +76,7 @@ extracted_corpus\b
 
 # never ship compiled charmonizer
 charmonizer$
+
+# LuxyX::Remote triggers security scan issues
+# so remove it from CPAN dist. Folks can get it from GH if they want.
+lib/LucyX/Remote/
