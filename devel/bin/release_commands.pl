@@ -122,6 +122,7 @@ say qq|gpg --armor --output apache-lucy-$x_y_z_version.tar.gz.asc |
 say qq|# Add the artifacts and commit to the dev area on dist.apache.org.|;
 say qq|svn add |
     . qq|apache-lucy-$x_y_z_version.tar.gz |
+    . qq|apache-lucy-$x_y_z_version.tar.gz.md5 |
     . qq|apache-lucy-$x_y_z_version.tar.gz.sha512 |
     . qq|apache-lucy-$x_y_z_version.tar.gz.asc |
     . qq|CHANGES-$x_y_z_version.txt |;
@@ -165,6 +166,8 @@ say qq|svnmucc -m "Publish Lucy $x_y_z_version" |
     . qq|-U https://dist.apache.org/repos/dist/ |
     . qq|mv dev/lucy/apache-lucy-$full_rc_version/apache-lucy-$x_y_z_version.tar.gz |
     . qq|release/lucy/apache-lucy-$x_y_z_version.tar.gz |
+    . qq|mv dev/lucy/apache-lucy-$full_rc_version/apache-lucy-$x_y_z_version.tar.gz.md5 |
+    . qq|release/lucy/apache-lucy-$x_y_z_version.tar.gz.md5 |
     . qq|mv dev/lucy/apache-lucy-$full_rc_version/apache-lucy-$x_y_z_version.tar.gz.sha512 |
     . qq|release/lucy/apache-lucy-$x_y_z_version.tar.gz.sha512 |
     . qq|mv dev/lucy/apache-lucy-$full_rc_version/apache-lucy-$x_y_z_version.tar.gz.asc |
@@ -182,6 +185,7 @@ if ( $micro > 0 ) {
     say qq|svnmucc -m "Remove Lucy $prev" |
         . qq|-U https://dist.apache.org/repos/dist/release/lucy/ |
         . qq|rm apache-lucy-$prev.tar.gz |
+        . qq|rm apache-lucy-$prev.tar.gz.md5 |
         . qq|rm apache-lucy-$prev.tar.gz.sha512 |
         . qq|rm apache-lucy-$prev.tar.gz.asc |
         . qq|rm CHANGES-$prev.txt |;

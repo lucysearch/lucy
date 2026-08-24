@@ -15,7 +15,7 @@
 
 package Lucy::Index::BackgroundMerger;
 use Lucy;
-our $VERSION = '0.006000';
+our $VERSION = '0.007000';
 $VERSION = eval $VERSION;
 
 1;

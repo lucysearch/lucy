@@ -4,6 +4,30 @@ Revision history for Lucy
 
   Tasks:
     * Forked from Apache Lucy project at ASF and renamed to Lucy
+    * Update lemon.c and lempar.c to latest versions from SQLite repo
+
+0.6.2  2018-02-20
+
+  Bugfixes:
+
+    * Fix rpath issue with ELF linkers using new dtags
+    * Fix build issue with recent Go versions
+    * [LUCY-325] - QueryParser mishandles trailing double quote
+    * [LUCY-327] - t/core/035-json.t aborts when compiled with lemon 3.22.0
+
+0.6.1  2016-12-09
+
+  Bugfixes:
+
+    * [LUCY-286] - Remote::SearchClient::DESTROY shouldn't throw exceptions
+    * [LUCY-309] - BSD make doesn't support pattern rules
+    * [LUCY-310] - CPAN dist includes Lucy/Test.xs
+    * [LUCY-311] - Non-ASCII error messages from strerror cause exceptions
+    * [LUCY-312] - Remote searcher tests fail if port is in use
+    * [LUCY-315] - Memory leak in HitQueue with SortSpec
+    * [LUCY-316] - Don't regenerate POD when building CPAN distro
+    * [LUCY-317] - Compile failure on FreeBSD 10.1
+    * [LUCY-318] - Indexing fails with "input n too high" in S_fibonacci
 
 0.6.0  2016-09-24
 

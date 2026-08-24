@@ -499,4 +499,3 @@ TestQPSyntax_Run_IMP(TestQueryParserSyntax *self, TestBatchRunner *runner) {
     test_query_parser_deeply_nested(runner);
 }
 
-
