@@ -1,5 +1,13 @@
 Revision history for Lucy
 
+0.8.0  xxx
+
+  Security:
+    * LucyX::Remote modules are no longer shipped with Perl CPAN distribution,
+      because they trigger security warnings. The LucyX:: namespace has always
+      represented experimental, unofficial code. The modules are still available
+      via GitHub.
+
 0.7.0  2026-08-15
 
   Tasks:
