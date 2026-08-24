@@ -44,7 +44,7 @@
 #include "Lucy/Util/Freezer.h"
 
 Vector*
-TestUtils_doc_set() {
+TestUtils_doc_set(void) {
     Vector *docs = Vec_new(10);
 
     Vec_Push(docs, (Obj*)TestUtils_get_str("x"));
@@ -213,7 +213,7 @@ TestUtils_test_analyzer(TestBatchRunner *runner, Analyzer *analyzer,
 }
 
 FSFolder*
-TestUtils_modules_folder() {
+TestUtils_modules_folder(void) {
     static const char *const paths[] = { "modules", "../modules" };
 
     for (size_t i = 0; i < sizeof(paths) / sizeof(char*); i++) {

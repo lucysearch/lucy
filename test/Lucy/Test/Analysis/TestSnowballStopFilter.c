@@ -24,7 +24,7 @@
 #include "Lucy/Analysis/SnowballStopFilter.h"
 
 TestSnowballStopFilter*
-TestSnowStop_new() {
+TestSnowStop_new(void) {
     return (TestSnowballStopFilter*)Class_Make_Obj(TESTSNOWBALLSTOPFILTER);
 }
 

@@ -23,7 +23,7 @@
 #include "Lucy/Plan/Schema.h"
 
 NoMatchMatcher*
-NoMatchMatcher_new() {
+NoMatchMatcher_new(void) {
     NoMatchMatcher *self = (NoMatchMatcher*)Class_Make_Obj(NOMATCHMATCHER);
     return NoMatchMatcher_init(self);
 }

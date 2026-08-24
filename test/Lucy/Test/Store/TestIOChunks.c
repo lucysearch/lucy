@@ -35,7 +35,7 @@
 #include "Lucy/Store/RAMFileHandle.h"
 
 TestIOChunks*
-TestIOChunks_new() {
+TestIOChunks_new(void) {
     return (TestIOChunks*)Class_Make_Obj(TESTIOCHUNKS);
 }
 

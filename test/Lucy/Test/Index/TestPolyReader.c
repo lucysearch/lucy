@@ -24,7 +24,7 @@
 #include "Lucy/Index/PolyReader.h"
 
 TestPolyReader*
-TestPolyReader_new() {
+TestPolyReader_new(void) {
     return (TestPolyReader*)Class_Make_Obj(TESTPOLYREADER);
 }
 

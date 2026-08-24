@@ -25,7 +25,7 @@
 #include "Lucy/Search/Span.h"
 
 TestHeatMap*
-TestHeatMap_new() {
+TestHeatMap_new(void) {
     return (TestHeatMap*)Class_Make_Obj(TESTHEATMAP);
 }
 

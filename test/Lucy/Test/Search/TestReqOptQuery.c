@@ -28,7 +28,7 @@
 #include "Lucy/Util/Freezer.h"
 
 TestReqOptQuery*
-TestReqOptQuery_new() {
+TestReqOptQuery_new(void) {
     return (TestReqOptQuery*)Class_Make_Obj(TESTREQOPTQUERY);
 }
 

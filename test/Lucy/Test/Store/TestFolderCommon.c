@@ -538,7 +538,7 @@ test_Close(TestBatchRunner *runner, set_up_t set_up, tear_down_t tear_down) {
 }
 
 uint32_t
-TestFolderCommon_num_tests() {
+TestFolderCommon_num_tests(void) {
     return 99;
 }
 

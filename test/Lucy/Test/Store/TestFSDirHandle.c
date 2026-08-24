@@ -37,7 +37,7 @@
 #include "Lucy/Store/OutStream.h"
 
 TestFSDirHandle*
-TestFSDH_new() {
+TestFSDH_new(void) {
     return (TestFSDirHandle*)Class_Make_Obj(TESTFSDIRHANDLE);
 }
 

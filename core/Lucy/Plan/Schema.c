@@ -48,7 +48,7 @@ static void
 S_add_numeric_field(Schema *self, String *field, FieldType *type);
 
 Schema*
-Schema_new() {
+Schema_new(void) {
     Schema *self = (Schema*)Class_Make_Obj(SCHEMA);
     return Schema_init(self);
 }

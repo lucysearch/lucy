@@ -26,7 +26,7 @@
 #include "Lucy/Util/Freezer.h"
 
 TestBlobType*
-TestBlobType_new() {
+TestBlobType_new(void) {
     return (TestBlobType*)Class_Make_Obj(TESTBLOBTYPE);
 }
 

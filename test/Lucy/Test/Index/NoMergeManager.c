@@ -23,7 +23,7 @@
 #include "Lucy/Index/PolyReader.h"
 
 NoMergeManager*
-NoMergeManager_new() {
+NoMergeManager_new(void) {
     NoMergeManager *self = (NoMergeManager*)Class_Make_Obj(NOMERGEMANAGER);
     return (NoMergeManager*)IxManager_init((IndexManager*)self, NULL);
 }

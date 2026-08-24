@@ -28,7 +28,7 @@
 #include "Lucy/Util/Freezer.h"
 
 TestFullTextType*
-TestFullTextType_new() {
+TestFullTextType_new(void) {
     return (TestFullTextType*)Class_Make_Obj(TESTFULLTEXTTYPE);
 }
 

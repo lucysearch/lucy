@@ -76,7 +76,7 @@ SortColl_new(Schema *schema, SortSpec *sort_spec, uint32_t wanted) {
 
 // Default to sort-by-score-then-doc-id.
 static Vector*
-S_default_sort_rules() {
+S_default_sort_rules(void) {
     Vector *rules = Vec_new(1);
     Vec_Push(rules, (Obj*)SortRule_new(SortRule_SCORE, NULL, false));
     Vec_Push(rules, (Obj*)SortRule_new(SortRule_DOC_ID, NULL, false));

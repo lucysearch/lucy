@@ -44,12 +44,12 @@ static String *unindexed_unanalyzed_str;
 static String *united_states_str;
 
 TestFieldMisc*
-TestFieldMisc_new() {
+TestFieldMisc_new(void) {
     return (TestFieldMisc*)Class_Make_Obj(TESTFIELDMISC);
 }
 
 static void
-S_init_strings() {
+S_init_strings(void) {
     analyzed_str               = Str_newf("analyzed");
     easy_analyzed_str          = Str_newf("easy_analyzed");
     state_str                  = Str_newf("state");
@@ -61,7 +61,7 @@ S_init_strings() {
 }
 
 static void
-S_destroy_strings() {
+S_destroy_strings(void) {
     DECREF(analyzed_str);
     DECREF(easy_analyzed_str);
     DECREF(state_str);
@@ -73,7 +73,7 @@ S_destroy_strings() {
 }
 
 static Schema*
-S_create_schema() {
+S_create_schema(void) {
     Schema *schema = Schema_new();
 
     StandardTokenizer *tokenizer     = StandardTokenizer_new();

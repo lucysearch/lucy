@@ -33,7 +33,7 @@ const char path_to_index[] = "lucy_index";
 const char uscon_source[]  = "../../common/sample/us_constitution";
 
 static Schema*
-S_create_schema() {
+S_create_schema(void) {
     // Create a new schema.
     Schema *schema = Schema_new();
 
@@ -184,7 +184,7 @@ S_parse_file(const char *filename) {
 }
 
 int
-main() {
+main(void) {
     // Initialize the library.
     lucy_bootstrap_parcel();
 

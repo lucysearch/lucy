@@ -61,7 +61,7 @@ TestSchema_Architecture_IMP(TestSchema *self) {
 }
 
 TestBatchSchema*
-TestBatchSchema_new() {
+TestBatchSchema_new(void) {
     return (TestBatchSchema*)Class_Make_Obj(TESTBATCHSCHEMA);
 }
 

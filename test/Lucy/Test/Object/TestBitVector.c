@@ -27,7 +27,7 @@
 #include <stdlib.h>
 
 TestBitVector*
-TestBitVector_new() {
+TestBitVector_new(void) {
     return (TestBitVector*)Class_Make_Obj(TESTBITVECTOR);
 }
 
@@ -421,7 +421,7 @@ test_To_Array(TestBatchRunner *runner) {
 
 // Valgrind only - detect off-by-one error.
 static void
-test_off_by_one_error() {
+test_off_by_one_error(void) {
     for (unsigned cap = 5; cap <= 24; cap++) {
         BitVector *bit_vec = BitVec_new(cap);
         BitVec_Set(bit_vec, cap - 2);

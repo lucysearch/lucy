@@ -28,7 +28,7 @@
 #include "Lucy/Util/Json.h"
 
 TestSnowballStemmer*
-TestSnowStemmer_new() {
+TestSnowStemmer_new(void) {
     return (TestSnowballStemmer*)Class_Make_Obj(TESTSNOWBALLSTEMMER);
 }
 

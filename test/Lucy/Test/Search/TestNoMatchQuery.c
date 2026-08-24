@@ -27,7 +27,7 @@
 #include "Lucy/Search/NoMatchQuery.h"
 
 TestNoMatchQuery*
-TestNoMatchQuery_new() {
+TestNoMatchQuery_new(void) {
     return (TestNoMatchQuery*)Class_Make_Obj(TESTNOMATCHQUERY);
 }
 

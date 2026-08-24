@@ -36,7 +36,7 @@
 #include "Lucy/Util/NumberUtils.h"
 
 TestIOPrimitives*
-TestIOPrimitives_new() {
+TestIOPrimitives_new(void) {
     return (TestIOPrimitives*)Class_Make_Obj(TESTIOPRIMITIVES);
 }
 

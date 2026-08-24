@@ -26,7 +26,7 @@
 #include "Lucy/Store/RAMDirHandle.h"
 
 TestRAMDirHandle*
-TestRAMDH_new() {
+TestRAMDH_new(void) {
     return (TestRAMDirHandle*)Class_Make_Obj(TESTRAMDIRHANDLE);
 }
 

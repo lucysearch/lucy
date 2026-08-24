@@ -39,7 +39,7 @@ static String *seg_1       = NULL;
 static String *stuff       = NULL;
 
 TestCompoundFileReader*
-TestCFReader_new() {
+TestCFReader_new(void) {
     return (TestCompoundFileReader*)Class_Make_Obj(TESTCOMPOUNDFILEREADER);
 }
 
@@ -68,7 +68,7 @@ S_destroy_strings(void) {
 }
 
 static Folder*
-S_folder_with_contents() {
+S_folder_with_contents(void) {
     RAMFolder *folder  = RAMFolder_new(seg_1);
     OutStream *foo_out = RAMFolder_Open_Out(folder, foo);
     OutStream *bar_out = RAMFolder_Open_Out(folder, bar);

@@ -24,7 +24,7 @@
 #include "Lucy/Index/DocWriter.h"
 
 TestDocWriter*
-TestDocWriter_new() {
+TestDocWriter_new(void) {
     return (TestDocWriter*)Class_Make_Obj(TESTDOCWRITER);
 }
 

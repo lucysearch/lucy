@@ -22,7 +22,7 @@
 #include "Lucy/Analysis/Inversion.h"
 
 CaseFolder*
-CaseFolder_new() {
+CaseFolder_new(void) {
     CaseFolder *self = (CaseFolder*)Class_Make_Obj(CASEFOLDER);
     return CaseFolder_init(self);
 }

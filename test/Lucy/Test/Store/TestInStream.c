@@ -32,7 +32,7 @@
 #include "Lucy/Store/RAMFileHandle.h"
 
 TestInStream*
-TestInStream_new() {
+TestInStream_new(void) {
     return (TestInStream*)Class_Make_Obj(TESTINSTREAM);
 }
 

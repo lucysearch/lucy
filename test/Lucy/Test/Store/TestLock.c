@@ -35,12 +35,12 @@
 #include "Lucy/Util/Json.h"
 
 TestLockFileLock*
-TestLFLock_new() {
+TestLFLock_new(void) {
     return (TestLockFileLock*)Class_Make_Obj(TESTLOCKFILELOCK);
 }
 
 static Folder*
-S_create_fs_folder() {
+S_create_fs_folder(void) {
     Folder *folder = (Folder*)FSFolder_new(SSTR_WRAP_C("_locktest"));
     Folder_Initialize(folder);
     return folder;

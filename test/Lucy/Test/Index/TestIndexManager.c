@@ -23,7 +23,7 @@
 #include "Lucy/Index/IndexManager.h"
 
 TestIndexManager*
-TestIxManager_new() {
+TestIxManager_new(void) {
     return (TestIndexManager*)Class_Make_Obj(TESTINDEXMANAGER);
 }
 

@@ -46,7 +46,7 @@
 #define make_poly_query   (Query*)TestUtils_make_poly_query
 
 TestQueryParserLogic*
-TestQPLogic_new() {
+TestQPLogic_new(void) {
     return (TestQueryParserLogic*)Class_Make_Obj(TESTQUERYPARSERLOGIC);
 }
 
@@ -700,27 +700,27 @@ logical_test_field_phrase(uint32_t boolop) {
 }
 
 static TestQueryParser*
-prune_test_null_querystring() {
+prune_test_null_querystring(void) {
     Query   *pruned = (Query*)NoMatchQuery_new();
     return TestQP_new(NULL, NULL, pruned, 0);
 }
 
 static TestQueryParser*
-prune_test_matchall() {
+prune_test_matchall(void) {
     Query   *tree   = (Query*)MatchAllQuery_new();
     Query   *pruned = (Query*)NoMatchQuery_new();
     return TestQP_new(NULL, tree, pruned, 0);
 }
 
 static TestQueryParser*
-prune_test_nomatch() {
+prune_test_nomatch(void) {
     Query   *tree   = (Query*)NoMatchQuery_new();
     Query   *pruned = (Query*)NoMatchQuery_new();
     return TestQP_new(NULL, tree, pruned, 0);
 }
 
 static TestQueryParser*
-prune_test_optional_not() {
+prune_test_optional_not(void) {
     Query   *a_leaf  = make_leaf_query(NULL, "a");
     Query   *b_leaf  = make_leaf_query(NULL, "b");
     Query   *not_b   = make_not_query(b_leaf);
@@ -732,7 +732,7 @@ prune_test_optional_not() {
 }
 
 static TestQueryParser*
-prune_test_reqopt_optional_not() {
+prune_test_reqopt_optional_not(void) {
     Query   *a_leaf  = make_leaf_query(NULL, "a");
     Query   *b_leaf  = make_leaf_query(NULL, "b");
     Query   *not_b   = make_not_query(b_leaf);
@@ -746,7 +746,7 @@ prune_test_reqopt_optional_not() {
 }
 
 static TestQueryParser*
-prune_test_reqopt_required_not() {
+prune_test_reqopt_required_not(void) {
     Query   *a_leaf  = make_leaf_query(NULL, "a");
     Query   *b_leaf  = make_leaf_query(NULL, "b");
     Query   *not_a   = make_not_query(a_leaf);
@@ -760,7 +760,7 @@ prune_test_reqopt_required_not() {
 }
 
 static TestQueryParser*
-prune_test_not_and_not() {
+prune_test_not_and_not(void) {
     Query   *a_leaf  = make_leaf_query(NULL, "a");
     Query   *b_leaf  = make_leaf_query(NULL, "b");
     Query   *not_a   = make_not_query(a_leaf);
@@ -841,7 +841,7 @@ static LUCY_TestQPLogic_Logical_Test_t logical_test_funcs[] = {
 };
 
 typedef TestQueryParser*
-(*LUCY_TestQPLogic_Prune_Test_t)();
+(*LUCY_TestQPLogic_Prune_Test_t)(void);
 
 static LUCY_TestQPLogic_Prune_Test_t prune_test_funcs[] = {
     prune_test_null_querystring,
@@ -855,7 +855,7 @@ static LUCY_TestQPLogic_Prune_Test_t prune_test_funcs[] = {
 };
 
 static Folder*
-S_create_index() {
+S_create_index(void) {
     Vector *doc_set = TestUtils_doc_set();
     Folder *folder  = TestUtils_create_index(doc_set);
 

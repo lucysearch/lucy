@@ -51,7 +51,7 @@ material.
 
 ``` c
 int
-main() {
+main(void) {
     // Initialize the library.
     lucy_bootstrap_parcel();
 

@@ -23,7 +23,7 @@
 #include "Lucy/Test/Index/TestPostingListWriter.h"
 
 TestPostingListWriter*
-TestPListWriter_new() {
+TestPListWriter_new(void) {
     return (TestPostingListWriter*)Class_Make_Obj(TESTPOSTINGLISTWRITER);
 }
 

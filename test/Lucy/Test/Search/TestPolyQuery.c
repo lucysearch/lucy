@@ -30,12 +30,12 @@
 #include "Lucy/Util/Freezer.h"
 
 TestANDQuery*
-TestANDQuery_new() {
+TestANDQuery_new(void) {
     return (TestANDQuery*)Class_Make_Obj(TESTANDQUERY);
 }
 
 TestORQuery*
-TestORQuery_new() {
+TestORQuery_new(void) {
     return (TestORQuery*)Class_Make_Obj(TESTORQUERY);
 }
 

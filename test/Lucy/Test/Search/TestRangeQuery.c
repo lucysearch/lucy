@@ -26,7 +26,7 @@
 #include "Lucy/Search/RangeQuery.h"
 
 TestRangeQuery*
-TestRangeQuery_new() {
+TestRangeQuery_new(void) {
     return (TestRangeQuery*)Class_Make_Obj(TESTRANGEQUERY);
 }
 

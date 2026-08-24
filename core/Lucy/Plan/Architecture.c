@@ -40,7 +40,7 @@
 #include "Lucy/Store/Folder.h"
 
 Architecture*
-Arch_new() {
+Arch_new(void) {
     Architecture *self = (Architecture*)Class_Make_Obj(ARCHITECTURE);
     return Arch_init(self);
 }

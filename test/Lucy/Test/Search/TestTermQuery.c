@@ -26,7 +26,7 @@
 #include "Lucy/Search/TermQuery.h"
 
 TestTermQuery*
-TestTermQuery_new() {
+TestTermQuery_new(void) {
     return (TestTermQuery*)Class_Make_Obj(TESTTERMQUERY);
 }
 

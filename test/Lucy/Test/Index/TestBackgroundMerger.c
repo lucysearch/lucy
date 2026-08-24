@@ -33,7 +33,7 @@
 #include "Lucy/Util/Json.h"
 
 TestBackgroundMerger*
-TestBGMerger_new() {
+TestBGMerger_new(void) {
     return (TestBackgroundMerger*)Class_Make_Obj(TESTBACKGROUNDMERGER);
 }
 

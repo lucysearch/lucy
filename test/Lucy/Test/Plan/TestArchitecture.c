@@ -23,7 +23,7 @@
 #include "Lucy/Plan/Architecture.h"
 
 TestArchitecture*
-TestArch_new() {
+TestArch_new(void) {
     TestArchitecture *self
         = (TestArchitecture*)Class_Make_Obj(TESTARCHITECTURE);
     return TestArch_init(self);

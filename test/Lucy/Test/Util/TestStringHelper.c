@@ -26,7 +26,7 @@
 #include "Clownfish/TestHarness/TestBatchRunner.h"
 
 TestStringHelper*
-TestStrHelp_new() {
+TestStrHelp_new(void) {
     return (TestStringHelper*)Class_Make_Obj(TESTSTRINGHELPER);
 }
 

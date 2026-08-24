@@ -60,7 +60,7 @@ static void
 S_search(IndexSearcher *searcher, const char *query);
 
 int
-main() {
+main(void) {
     // Initialize the library.
     lucy_bootstrap_parcel();
 
@@ -82,7 +82,7 @@ main() {
 }
 
 static Schema*
-S_create_schema() {
+S_create_schema(void) {
     // Create a new schema.
     Schema *schema = Schema_new();
 

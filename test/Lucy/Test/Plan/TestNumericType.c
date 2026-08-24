@@ -27,7 +27,7 @@
 #include "Lucy/Util/Freezer.h"
 
 TestNumericType*
-TestNumericType_new() {
+TestNumericType_new(void) {
     return (TestNumericType*)Class_Make_Obj(TESTNUMERICTYPE);
 }
 

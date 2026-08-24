@@ -25,18 +25,18 @@
 #include "Lucy/Test/TestUtils.h"
 
 TestFieldType*
-TestFType_new() {
+TestFType_new(void) {
     return (TestFieldType*)Class_Make_Obj(TESTFIELDTYPE);
 }
 
 DummyFieldType*
-DummyFieldType_new() {
+DummyFieldType_new(void) {
     DummyFieldType *self = (DummyFieldType*)Class_Make_Obj(DUMMYFIELDTYPE);
     return (DummyFieldType*)FType_init((FieldType*)self);
 }
 
 static FieldType*
-S_alt_field_type() {
+S_alt_field_type(void) {
     String *name = SSTR_WRAP_C("DummyFieldType2");
     Class *klass = Class_singleton(name, DUMMYFIELDTYPE);
     FieldType *self = (FieldType*)Class_Make_Obj(klass);

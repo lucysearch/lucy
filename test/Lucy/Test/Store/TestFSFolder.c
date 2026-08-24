@@ -56,12 +56,12 @@ S_create_test_symlinks(void);
 #endif /* CHY_HAS_WINDOWS_H */
 
 TestFSFolder*
-TestFSFolder_new() {
+TestFSFolder_new(void) {
     return (TestFSFolder*)Class_Make_Obj(TESTFSFOLDER);
 }
 
 static Folder*
-S_set_up() {
+S_set_up(void) {
     rmdir("_fstest");
     String   *test_dir = SSTR_WRAP_C("_fstest");
     FSFolder *folder   = FSFolder_new(test_dir);
@@ -73,7 +73,7 @@ S_set_up() {
 }
 
 static void
-S_tear_down() {
+S_tear_down(void) {
     struct stat stat_buf;
     int result = rmdir("_fstest");
     if (result < 0) {

@@ -27,7 +27,7 @@
 #include "Lucy/Util/Freezer.h"
 
 TestPhraseQuery*
-TestPhraseQuery_new() {
+TestPhraseQuery_new(void) {
     return (TestPhraseQuery*)Class_Make_Obj(TESTPHRASEQUERY);
 }
 

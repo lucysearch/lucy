@@ -275,7 +275,7 @@ SortWriter_Format_IMP(SortWriter *self) {
 /*************************************************************************/
 
 Counter*
-Counter_new() {
+Counter_new(void) {
     Counter *self = (Counter*)Class_Make_Obj(COUNTER);
     return Counter_init(self);
 }
