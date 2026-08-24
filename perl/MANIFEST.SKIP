@@ -80,3 +80,5 @@ charmonizer$
 # LuxyX::Remote triggers security scan issues
 # so remove it from CPAN dist. Folks can get it from GH if they want.
 lib/LucyX/Remote/
+t/510-remote_search.t
+t/550-cluster_searcher.t
