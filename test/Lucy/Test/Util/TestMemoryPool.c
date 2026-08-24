@@ -25,7 +25,7 @@
 #include "Lucy/Util/MemoryPool.h"
 
 TestMemoryPool*
-TestMemPool_new() {
+TestMemPool_new(void) {
     return (TestMemoryPool*)Class_Make_Obj(TESTMEMORYPOOL);
 }
 

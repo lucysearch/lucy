@@ -29,7 +29,7 @@
 #include "Lucy/Util/NumberUtils.h"
 
 TestNumberUtils*
-TestNumUtil_new() {
+TestNumUtil_new(void) {
     return (TestNumberUtils*)Class_Make_Obj(TESTNUMBERUTILS);
 }
 

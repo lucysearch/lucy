@@ -33,7 +33,7 @@
 #include "utf8proc.h"
 
 TestNormalizer*
-TestNormalizer_new() {
+TestNormalizer_new(void) {
     return (TestNormalizer*)Class_Make_Obj(TESTNORMALIZER);
 }
 

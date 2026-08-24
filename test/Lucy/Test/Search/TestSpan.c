@@ -24,7 +24,7 @@
 #include "Lucy/Search/Span.h"
 
 TestSpan*
-TestSpan_new() {
+TestSpan_new(void) {
     return (TestSpan*)Class_Make_Obj(TESTSPAN);
 }
 

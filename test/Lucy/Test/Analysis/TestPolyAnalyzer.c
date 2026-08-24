@@ -30,7 +30,7 @@
 #include "Lucy/Analysis/StandardTokenizer.h"
 
 TestPolyAnalyzer*
-TestPolyAnalyzer_new() {
+TestPolyAnalyzer_new(void) {
     return (TestPolyAnalyzer*)Class_Make_Obj(TESTPOLYANALYZER);
 }
 

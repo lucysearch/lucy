@@ -27,7 +27,7 @@
 #include "Lucy/Util/Json.h"
 
 TestStandardTokenizer*
-TestStandardTokenizer_new() {
+TestStandardTokenizer_new(void) {
     return (TestStandardTokenizer*)Class_Make_Obj(TESTSTANDARDTOKENIZER);
 }
 

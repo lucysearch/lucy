@@ -53,7 +53,7 @@
 #define TEST_STRING_LEN 425
 
 TestHighlighter*
-TestHighlighter_new() {
+TestHighlighter_new(void) {
     return (TestHighlighter*)Class_Make_Obj(TESTHIGHLIGHTER);
 }
 

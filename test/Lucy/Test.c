@@ -91,7 +91,7 @@
 #include "Lucy/Test/Util/TestStringHelper.h"
 
 TestSuite*
-Test_create_test_suite() {
+Test_create_test_suite(void) {
     TestSuite *suite = TestSuite_new();
 
     TestSuite_Add_Batch(suite, (TestBatch*)TestPriQ_new());

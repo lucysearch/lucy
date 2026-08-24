@@ -28,7 +28,7 @@
 #include "Lucy/Util/Freezer.h"
 
 TestNOTQuery*
-TestNOTQuery_new() {
+TestNOTQuery_new(void) {
     return (TestNOTQuery*)Class_Make_Obj(TESTNOTQUERY);
 }
 

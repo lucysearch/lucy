@@ -30,7 +30,7 @@
 #include "Lucy/Util/Freezer.h"
 
 TestFreezer*
-TestFreezer_new() {
+TestFreezer_new(void) {
     return (TestFreezer*)Class_Make_Obj(TESTFREEZER);
 }
 

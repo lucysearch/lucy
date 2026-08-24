@@ -26,7 +26,7 @@
 #include "Lucy/Analysis/CaseFolder.h"
 
 TestCaseFolder*
-TestCaseFolder_new() {
+TestCaseFolder_new(void) {
     return (TestCaseFolder*)Class_Make_Obj(TESTCASEFOLDER);
 }
 

@@ -26,7 +26,7 @@
 #include "Lucy/Search/LeafQuery.h"
 
 TestLeafQuery*
-TestLeafQuery_new() {
+TestLeafQuery_new(void) {
     return (TestLeafQuery*)Class_Make_Obj(TESTLEAFQUERY);
 }
 

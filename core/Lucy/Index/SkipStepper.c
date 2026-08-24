@@ -25,7 +25,7 @@
 #include "Lucy/Store/OutStream.h"
 
 SkipStepper*
-SkipStepper_new() {
+SkipStepper_new(void) {
     SkipStepper *self = (SkipStepper*)Class_Make_Obj(SKIPSTEPPER);
     SkipStepperIVARS *const ivars = SkipStepper_IVARS(self);
 

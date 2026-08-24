@@ -30,7 +30,7 @@
 #include "Lucy/Util/Json.h"
 
 NoMatchQuery*
-NoMatchQuery_new() {
+NoMatchQuery_new(void) {
     NoMatchQuery *self = (NoMatchQuery*)Class_Make_Obj(NOMATCHQUERY);
     return NoMatchQuery_init(self);
 }

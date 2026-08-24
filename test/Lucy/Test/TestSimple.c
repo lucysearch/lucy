@@ -27,7 +27,7 @@
 #include "Lucy/Store/RAMFolder.h"
 
 TestSimple*
-TestSimple_new() {
+TestSimple_new(void) {
     return (TestSimple*)Class_Make_Obj(TESTSIMPLE);
 }
 

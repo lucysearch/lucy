@@ -25,7 +25,7 @@
 
 
 TestRegexTokenizer*
-TestRegexTokenizer_new() {
+TestRegexTokenizer_new(void) {
     return (TestRegexTokenizer*)Class_Make_Obj(TESTREGEXTOKENIZER);
 }
 

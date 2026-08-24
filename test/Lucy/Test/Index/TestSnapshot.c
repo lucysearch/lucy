@@ -24,7 +24,7 @@
 #include "Lucy/Store/RAMFolder.h"
 
 TestSnapshot*
-TestSnapshot_new() {
+TestSnapshot_new(void) {
     return (TestSnapshot*)Class_Make_Obj(TESTSNAPSHOT);
 }
 

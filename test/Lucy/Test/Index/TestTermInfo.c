@@ -24,7 +24,7 @@
 #include "Lucy/Index/TermInfo.h"
 
 TestTermInfo*
-TestTermInfo_new() {
+TestTermInfo_new(void) {
     return (TestTermInfo*)Class_Make_Obj(TESTTERMINFO);
 }
 

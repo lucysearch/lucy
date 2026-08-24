@@ -24,7 +24,7 @@
 #include "Lucy/Util/Json.h"
 
 StringType*
-StringType_new() {
+StringType_new(void) {
     StringType *self = (StringType*)Class_Make_Obj(STRINGTYPE);
     return StringType_init(self);
 }

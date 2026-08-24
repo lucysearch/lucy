@@ -25,7 +25,7 @@
 #include "Lucy/Store/RAMFolder.h"
 
 TestSegment*
-TestSeg_new() {
+TestSeg_new(void) {
     return (TestSegment*)Class_Make_Obj(TESTSEGMENT);
 }
 

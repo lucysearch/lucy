@@ -43,7 +43,7 @@ TextType_Primitive_ID_IMP(TextType *self) {
 // `ivars->bytebuf`.
 
 TextTermStepper*
-TextTermStepper_new() {
+TextTermStepper_new(void) {
     TextTermStepper *self
         = (TextTermStepper*)Class_Make_Obj(TEXTTERMSTEPPER);
     return TextTermStepper_init(self);

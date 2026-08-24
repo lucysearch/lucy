@@ -17,6 +17,6 @@
 #include "testlucy_parcel.h"
 
 void
-testlucy_init_parcel() {
+testlucy_init_parcel(void) {
 }
 

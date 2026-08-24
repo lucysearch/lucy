@@ -20,7 +20,7 @@
 #include "Lucy/Store/FileWindow.h"
 
 FileWindow*
-FileWindow_new() {
+FileWindow_new(void) {
     FileWindow *self = (FileWindow*)Class_Make_Obj(FILEWINDOW);
     return FileWindow_init(self);
 }

@@ -50,12 +50,12 @@ static String *unused_str;
 static String *nope_str;
 
 TestSortWriter*
-TestSortWriter_new() {
+TestSortWriter_new(void) {
     return (TestSortWriter*)Class_Make_Obj(TESTSORTWRITER);
 }
 
 static void
-S_init_strings() {
+S_init_strings(void) {
     name_str   = Str_newf("name");
     speed_str  = Str_newf("speed");
     weight_str = Str_newf("weight");
@@ -67,7 +67,7 @@ S_init_strings() {
 }
 
 static void
-S_destroy_strings() {
+S_destroy_strings(void) {
     DECREF(name_str);
     DECREF(speed_str);
     DECREF(weight_str);
@@ -79,7 +79,7 @@ S_destroy_strings() {
 }
 
 static Schema*
-S_create_schema() {
+S_create_schema(void) {
     Schema *schema = Schema_new();
 
     StandardTokenizer *tokenizer = StandardTokenizer_new();

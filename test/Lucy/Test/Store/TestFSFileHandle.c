@@ -38,7 +38,7 @@ S_remove(String *path) {
 }
 
 TestFSFileHandle*
-TestFSFH_new() {
+TestFSFH_new(void) {
     return (TestFSFileHandle*)Class_Make_Obj(TESTFSFILEHANDLE);
 }
 

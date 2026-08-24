@@ -37,7 +37,7 @@ static TermVector*
 S_extract_tv_from_tv_buf(String *field, String *term_text, Blob *tv_buf);
 
 DocVector*
-DocVec_new() {
+DocVec_new(void) {
     DocVector *self = (DocVector*)Class_Make_Obj(DOCVECTOR);
     return DocVec_init(self);
 }

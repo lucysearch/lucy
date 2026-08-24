@@ -126,7 +126,7 @@ NumType_Load_IMP(NumericType *self, Obj *dump) {
 /****************************************************************************/
 
 Float64Type*
-Float64Type_new() {
+Float64Type_new(void) {
     Float64Type *self = (Float64Type*)Class_Make_Obj(FLOAT64TYPE);
     return Float64Type_init(self);
 }
@@ -168,7 +168,7 @@ Float64Type_Equals_IMP(Float64Type *self, Obj *other) {
 /****************************************************************************/
 
 Float32Type*
-Float32Type_new() {
+Float32Type_new(void) {
     Float32Type *self = (Float32Type*)Class_Make_Obj(FLOAT32TYPE);
     return Float32Type_init(self);
 }
@@ -210,7 +210,7 @@ Float32Type_Equals_IMP(Float32Type *self, Obj *other) {
 /****************************************************************************/
 
 Int32Type*
-Int32Type_new() {
+Int32Type_new(void) {
     Int32Type *self = (Int32Type*)Class_Make_Obj(INT32TYPE);
     return Int32Type_init(self);
 }
@@ -252,7 +252,7 @@ Int32Type_Equals_IMP(Int32Type *self, Obj *other) {
 /****************************************************************************/
 
 Int64Type*
-Int64Type_new() {
+Int64Type_new(void) {
     Int64Type *self = (Int64Type*)Class_Make_Obj(INT64TYPE);
     return Int64Type_init(self);
 }

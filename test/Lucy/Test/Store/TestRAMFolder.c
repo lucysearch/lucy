@@ -40,7 +40,7 @@ static String *nope          = NULL;
 static String *nope_nyet     = NULL;
 
 TestRAMFolder*
-TestRAMFolder_new() {
+TestRAMFolder_new(void) {
     return (TestRAMFolder*)Class_Make_Obj(TESTRAMFOLDER);
 }
 

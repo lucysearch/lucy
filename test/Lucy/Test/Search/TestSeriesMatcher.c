@@ -25,7 +25,7 @@
 #include "Lucy/Search/SeriesMatcher.h"
 
 TestSeriesMatcher*
-TestSeriesMatcher_new() {
+TestSeriesMatcher_new(void) {
     return (TestSeriesMatcher*)Class_Make_Obj(TESTSERIESMATCHER);
 }
 

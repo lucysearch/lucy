@@ -23,7 +23,7 @@
 #include "Lucy/Util/IndexFileNames.h"
 
 TestIndexFileNames*
-TestIxFileNames_new() {
+TestIxFileNames_new(void) {
     return (TestIndexFileNames*)Class_Make_Obj(TESTINDEXFILENAMES);
 }
 

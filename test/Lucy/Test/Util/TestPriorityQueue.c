@@ -25,7 +25,7 @@
 #include "Lucy/Util/PriorityQueue.h"
 
 TestPriorityQueue*
-TestPriQ_new() {
+TestPriQ_new(void) {
     return (TestPriorityQueue*)Class_Make_Obj(TESTPRIORITYQUEUE);
 }
 

@@ -35,12 +35,12 @@
 #include "Lucy/Test/TestUtils.h"
 
 TestPolySearcher*
-TestPolySearcher_new() {
+TestPolySearcher_new(void) {
     return (TestPolySearcher*)Class_Make_Obj(TESTPOLYSEARCHER);
 }
 
 static PolySearcher*
-S_create_poly_searcher() {
+S_create_poly_searcher(void) {
     Schema *schema = (Schema*)TestSchema_new(false);
 
     Folder *folder_a = TestUtils_create_index_c("x a", "x b", "x c", NULL);

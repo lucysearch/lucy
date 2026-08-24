@@ -205,7 +205,7 @@ __C__
 // Modern compilers should compute the result at compile time.
 // Taken from http://stackoverflow.com/a/1001373
 static CFISH_INLINE bool
-lucy_NumUtil_is_bigend() {
+lucy_NumUtil_is_bigend(void) {
     union {
         uint32_t i;
         char c[4];

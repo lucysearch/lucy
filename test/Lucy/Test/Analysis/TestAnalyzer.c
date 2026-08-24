@@ -25,12 +25,12 @@
 #include "Lucy/Analysis/Inversion.h"
 
 TestAnalyzer*
-TestAnalyzer_new() {
+TestAnalyzer_new(void) {
     return (TestAnalyzer*)Class_Make_Obj(TESTANALYZER);
 }
 
 DummyAnalyzer*
-DummyAnalyzer_new() {
+DummyAnalyzer_new(void) {
     DummyAnalyzer *self = (DummyAnalyzer*)Class_Make_Obj(DUMMYANALYZER);
     return DummyAnalyzer_init(self);
 }

@@ -36,12 +36,12 @@ static Blob *y_blob;
 static Blob *z_blob;
 
 TestSortExternal*
-TestSortExternal_new() {
+TestSortExternal_new(void) {
     return (TestSortExternal*)Class_Make_Obj(TESTSORTEXTERNAL);
 }
 
 static void
-S_init_blobs() {
+S_init_blobs(void) {
     a_blob = Blob_new("a", 1);
     b_blob = Blob_new("b", 1);
     c_blob = Blob_new("c", 1);
@@ -52,7 +52,7 @@ S_init_blobs() {
 }
 
 static void
-S_destroy_blobs() {
+S_destroy_blobs(void) {
     DECREF(a_blob);
     DECREF(b_blob);
     DECREF(c_blob);

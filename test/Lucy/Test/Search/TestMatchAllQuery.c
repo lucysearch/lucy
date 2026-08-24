@@ -27,7 +27,7 @@
 #include "Lucy/Search/MatchAllQuery.h"
 
 TestMatchAllQuery*
-TestMatchAllQuery_new() {
+TestMatchAllQuery_new(void) {
     return (TestMatchAllQuery*)Class_Make_Obj(TESTMATCHALLQUERY);
 }
 

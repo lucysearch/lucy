@@ -38,7 +38,7 @@
 #define EXP_OFFSET ((127 - 31) << 2)
 
 Similarity*
-Sim_new() {
+Sim_new(void) {
     Similarity *self = (Similarity*)Class_Make_Obj(SIMILARITY);
     return Sim_init(self);
 }

@@ -30,7 +30,7 @@
 #include "Lucy/Store/RAMFile.h"
 
 TestRAMFileHandle*
-TestRAMFH_new() {
+TestRAMFH_new(void) {
     return (TestRAMFileHandle*)Class_Make_Obj(TESTRAMFILEHANDLE);
 }
 

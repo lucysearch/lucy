@@ -27,14 +27,14 @@
 #include "Lucy/Store/RAMFolder.h"
 
 TestJson*
-TestJson_new() {
+TestJson_new(void) {
     return (TestJson*)Class_Make_Obj(TESTJSON);
 }
 
 // Create a test data structure including at least one each of Hash, Vector,
 // and String.
 static Obj*
-S_make_dump() {
+S_make_dump(void) {
     Hash *dump = Hash_new(0);
     Hash_Store_Utf8(dump, "foo", 3, (Obj*)Str_newf("foo"));
     Hash_Store_Utf8(dump, "stuff", 5, (Obj*)Vec_new(0));

@@ -24,7 +24,7 @@
 #include "Lucy/Index/HighlightWriter.h"
 
 TestHighlightWriter*
-TestHLWriter_new() {
+TestHLWriter_new(void) {
     return (TestHighlightWriter*)Class_Make_Obj(TESTHIGHLIGHTWRITER);
 }
 

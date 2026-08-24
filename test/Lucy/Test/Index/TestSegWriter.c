@@ -24,7 +24,7 @@
 #include "Lucy/Index/SegWriter.h"
 
 TestSegWriter*
-TestSegWriter_new() {
+TestSegWriter_new(void) {
     return (TestSegWriter*)Class_Make_Obj(TESTSEGWRITER);
 }
 

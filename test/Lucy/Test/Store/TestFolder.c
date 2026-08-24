@@ -41,7 +41,7 @@ static String *foo_foo           = NULL;
 static String *nope              = NULL;
 
 TestFolder*
-TestFolder_new() {
+TestFolder_new(void) {
     return (TestFolder*)Class_Make_Obj(TESTFOLDER);
 }
 

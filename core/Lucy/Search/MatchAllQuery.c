@@ -30,7 +30,7 @@
 #include "Lucy/Util/Freezer.h"
 
 MatchAllQuery*
-MatchAllQuery_new() {
+MatchAllQuery_new(void) {
     MatchAllQuery *self = (MatchAllQuery*)Class_Make_Obj(MATCHALLQUERY);
     return MatchAllQuery_init(self);
 }

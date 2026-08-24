@@ -55,7 +55,7 @@ they're defined.  We'll start off with three fields: title, content and url.
 
 ``` c
 static Schema*
-S_create_schema() {
+S_create_schema(void) {
     // Create a new schema.
     Schema *schema = Schema_new();
 
@@ -120,7 +120,7 @@ First, replace the constructor:
 
 ``` c
 int
-main() {
+main(void) {
     // Initialize the library.
     lucy_bootstrap_parcel();
 
