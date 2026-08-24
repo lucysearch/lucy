@@ -277,6 +277,8 @@ S_random_string() {
         int32_t code_point = 'a' + rand() % ('z' - 'a' + 1);
         CB_Cat_Char(buf, code_point);
     }
+    // Make sure not to generate "airplane", "bike" or "car" randomly.
+    CB_Cat_Char(buf, '_');
     String *string = CB_Yield_String(buf);
     DECREF(buf);
     return (Obj*)string;
