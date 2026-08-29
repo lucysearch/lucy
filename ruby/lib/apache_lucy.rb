@@ -14,6 +14,6 @@
 # limitations under the License.
 
 module Lucy 
-  VERSION = '0.7.0'
+  VERSION = '0.8.0'
 end
 

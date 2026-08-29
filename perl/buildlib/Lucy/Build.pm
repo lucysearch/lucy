@@ -22,7 +22,7 @@ use base qw(
     Clownfish::CFC::Perl::Build::Charmonic
 );
 
-our $VERSION = '0.007000';
+our $VERSION = '0.008000';
 $VERSION = eval $VERSION;
 
 use File::Spec::Functions qw( catdir catfile rel2abs updir );
