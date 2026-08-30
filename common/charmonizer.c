@@ -8798,8 +8798,8 @@ typedef struct SourceFileContext {
     chaz_MakeVar *var;
 } SourceFileContext;
 
-static const char lucy_version[]        = "0.7.0";
-static const char lucy_major_version[]  = "0.7";
+static const char lucy_version[]        = "0.8.0";
+static const char lucy_major_version[]  = "0.8";
 
 static void
 S_add_compiler_flags(struct chaz_CLI *cli);
@@ -9017,7 +9017,7 @@ lucy_MakeFile_new(chaz_CLI *cli) {
         self->cfish_lib_dir = NULL;
     }
     if (chaz_CC_binary_format() == CHAZ_CC_BINFMT_PE) {
-        self->cfish_lib_name = "clownfish-0.7";
+        self->cfish_lib_name = "clownfish-0.8";
     }
     else {
         self->cfish_lib_name = "clownfish";
