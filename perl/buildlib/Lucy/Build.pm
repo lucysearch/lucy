@@ -242,6 +242,7 @@ sub ACTION_dist {
         '../LICENSE'                       => 'LICENSE',
         '../NOTICE'                        => 'NOTICE',
         '../README'                        => 'README',
+        '../SECURITY.md'                   => 'SECURITY.md',
         $CHARMONIZER_C                     => 'charmonizer.c',
     );
     print "Copying files...\n";
